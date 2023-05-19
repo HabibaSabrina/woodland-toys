@@ -24,7 +24,7 @@ const Header = () => {
                 </div>
             <div className='md:flex items-center gap-8'>
             <div className='max-sm:absolute max-sm:top-0 max-sm:right-0'>
-            <Link><button className='flex gap-2 text-[#108826] font-semibold'><ArrowRightOnRectangleIcon className="h-6 w-6" />Login</button></Link>
+            <Link to='/login'><button className='flex gap-2 text-[#108826] font-semibold'><ArrowRightOnRectangleIcon className="h-6 w-6" />Login</button></Link>
             </div>
             <ul className={`md:flex max-sm:bg-[#108826] max-sm:text-white gap-8 text-[#108826] font-semibold absolute md:static 0 max-sm:pl-8 py-2 duration-500 ${open ? 'top-6' : '-top-80'}`}>
                 <Link><li className='max-sm:p-3'>Home</li></Link>
