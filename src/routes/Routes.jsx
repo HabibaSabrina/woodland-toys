@@ -7,6 +7,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddToys from "../pages/AddToys/AddToys";
 import Home from "../pages/Home/Home/Home";
+import AllToys from "../pages/AllToys/AllToys";
 
   const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ import Home from "../pages/Home/Home/Home";
         {
           path:'/addtoys',
           element:<AddToys></AddToys>
+        },
+        {
+          path:'/alltoys',
+          element:<AllToys></AllToys>,
+          loader: () => fetch('http://localhost:5000/toys')
         }
       ]
     },

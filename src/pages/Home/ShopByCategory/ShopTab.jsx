@@ -4,7 +4,7 @@ import '@smastrom/react-rating/style.css';
 const ShopTab = ({subData}) => {
     const {toyPhoto, toyName, price, ratings} = subData
     return (
-        <div className='flex gap-10 p-10 items-center bg-sky-100 my-10 rounded-xl border-8 border-gradient-to-r from-cyan-500 to-blue-500'>
+        <div className='flex gap-10 p-10 items-center bg-sky-100 my-10 rounded-xl'>
             <img src={toyPhoto} className='border-2 border-red-800 w-60 rounded-xl m-5' alt="" />
             <div>
             <p className='text-2xl font-bold'>{toyName}</p>
