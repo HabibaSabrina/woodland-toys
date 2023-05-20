@@ -40,7 +40,7 @@ import PrivateRoute from "./PrivateRoute";
           loader: () => fetch('http://localhost:5000/toys')
         },
         {
-          path:'/mytoys',
+          path:'mytoys',
           element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
         }
       ]

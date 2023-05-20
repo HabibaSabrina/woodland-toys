@@ -4,6 +4,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 const MyToys = () => {
     const {user} = useContext(AuthContext)
     const [userToys, setUserToys] = useState([])
+    console.log(user)
     const url = `http://localhost:5000/toys?sellerEmail=${user.email}`
     useEffect(()=>{
         fetch(url)
