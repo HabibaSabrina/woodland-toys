@@ -15,6 +15,21 @@ const AddToys = () => {
         const toyPhoto = form.toyPhoto.value;
         const toy = {toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, ratings, quantity, description}
         console.log(toy)
+        fetch('http://localhost:5000/toys',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if(data.insertedId){
+                alert('toy is added successfully')
+                form.reset();
+            }
+        })
 
     }
     return (
@@ -57,9 +72,9 @@ const AddToys = () => {
                             <option value='Bird'>Bird</option>
                             <option value='Horse'>Horse</option>
                             <option value='Dinosaur'>Dinosaur</option>
-                            <option value='Dogs'>Dogs</option>
+                            <option value='Dogs'>Dog</option>
                             <option value='Cat'>Cat</option>
-                            <option value='Cows'>Cows</option>
+                            <option value='Cows'>Cow</option>
                         </select>
                     </div>
                 </div>
@@ -71,7 +86,7 @@ const AddToys = () => {
                     <p className='font-bold text-center text-[#673c0b] mb-5'>Ratings</p>
                     <div className="rating">
                         <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star mask-green-100" value='1' />
-                        <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star" value='2' />
+                        <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star" value='2'/>
                         <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star" value='3' />
                         <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star" value='4' />
                         <input type="radio" name="ratings" className="mask h-14 w-14 bg-yellow-500 mask-star" value='5' />

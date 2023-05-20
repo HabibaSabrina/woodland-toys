@@ -30,7 +30,7 @@ const Header = () => {
                 <Link><li className='max-sm:p-3'>Home</li></Link>
                 <Link><li className='max-sm:p-3'>All Toys</li></Link>
                 <Link><li className='max-sm:p-3'>My Toys</li></Link>
-                <Link><li className='max-sm:p-3'>Add a Toy</li></Link>
+                <Link to='/addtoys'><li className='max-sm:p-3'>Add a Toy</li></Link>
                 <Link><li className='max-sm:p-3'>Blog</li></Link>
             </ul>
             
