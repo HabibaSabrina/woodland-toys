@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const AddToys = () => {
+    const {user} = useContext(AuthContext)
     const handleAddToys = event => {
         event.preventDefault()
         const form = event.target;
@@ -48,11 +50,11 @@ const AddToys = () => {
                     </div>
                     <div>
                         <p className='font-bold text-[#673c0b]'>Seller Name</p>
-                        <input className='  focus:outline-0  mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-xl' type="text" name="sellerName" required />
+                        <input defaultValue={user?.displayName} className='  focus:outline-0  mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-xl' type="text" name="sellerName" required />
                     </div>
                     <div>
                         <p className='font-bold text-[#673c0b]'>Seller Email</p>
-                        <input className='  focus:outline-0  mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-xl' type="email" name="sellerEmail" required />
+                        <input defaultValue={user?.email} className='  focus:outline-0  mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-xl' type="email" name="sellerEmail" required />
                     </div>
 
                     <div>

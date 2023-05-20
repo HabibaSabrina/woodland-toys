@@ -45,7 +45,7 @@ const Header = () => {
                         }
                     </div>
                     <ul className={`md:flex max-sm:bg-[#108826] max-sm:text-white gap-8 text-[#108826] font-semibold absolute md:static 0 max-sm:pl-8 py-2 duration-500 ${open ? 'top-6' : '-top-80'}`}>
-                        <Link><li className='max-sm:p-3'>Home</li></Link>
+                        <Link to='/'><li className='max-sm:p-3'>Home</li></Link>
                         <Link to='/alltoys'><li className='max-sm:p-3'>All Toys</li></Link>
                         {
                             user && <>
