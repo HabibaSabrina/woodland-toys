@@ -1,14 +1,41 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Login = () => {
+    const {signIn} = useContext(AuthContext)
+    const [error, setError] = useState('')
+    const [success, setSuccess] = useState('')
+    const handleUserLogin = event => {
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        setError('')
+        setSuccess('')
+        if (password.length < 6) {
+            setError('Password must be 6 characters');
+            return
+        }
+        signIn(email, password)
+            .then(result => {
+                const loggedUser = result.user
+                setSuccess('Login is successful')
+                setError('')
+                form.reset();
+                // navigate(from, { replace: true })
+            })
+            .catch(error => {
+                setError('Email or Password is incorrect')
+            })
+    }
     return (
         <div className='mt-10'>
             <img src="/peek.png" className='w-60 mx-auto -mb-5' alt="" />
             <div className='bg-green-300 p-10 md:mx-96 rounded-xl'>
                 <h1 className='text-center text-3xl font-bold text-[#673c0b]'>Login</h1>
-                <form>
+                <form onSubmit={handleUserLogin}>
                     <div className='text-center mt-10'>
                         <p className='font-bold text-[#673c0b]'>Email</p>
                         <input className='text-center  focus:outline-0 focus:text-center mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-full' type="email" name="email" required />
@@ -21,8 +48,8 @@ const Login = () => {
                         <p className='my-5 text-green-950 font-semibold'>Don't Have an Account? Please <Link to="/register"><span className='text-red-800 font-semibold'>Register</span></Link></p>
                     </div>
                 </form>
-                {/* <p className='text-center text-red-500 font-semibold'>{error}</p> */}
-                {/* <p className='text-center text-green-500 font-semibold'>{success}</p> */}
+                <p className='text-center text-red-500 font-semibold'>{error}</p>
+                <p className='text-center text-blue-800 font-semibold'>{success}</p>
             </div>
         </div>
     );

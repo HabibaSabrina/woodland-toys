@@ -76,7 +76,7 @@ const Register = () => {
                     </div>
                 </form>
                 <p className='text-center text-red-500 font-semibold'>{error}</p>
-                <p className='text-center text-green-500 font-semibold'>{success}</p>
+                <p className='text-center text-blue-800 font-semibold'>{success}</p>
             </div>
         </div>
         </div>
