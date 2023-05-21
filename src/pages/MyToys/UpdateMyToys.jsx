@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const UpdateMyToys = () => {
@@ -23,7 +24,7 @@ const UpdateMyToys = () => {
         .then(data =>{
             console.log(data)
             if(data.modifiedCount>0){
-                alert("toy info is updated")
+                toast.success("Toy info is updated")
                 form.reset()
             }
         })

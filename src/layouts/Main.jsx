@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../pages/Shared/Header';
 import { Outlet } from 'react-router-dom';
 import ScrollToTop from '../pages/Shared/ScrollToTop/ScrollToTop';
-
+import toast, { Toaster } from 'react-hot-toast';
 const Main = () => {
     return (
         <div>
@@ -11,6 +11,8 @@ const Main = () => {
             <Header></Header>
             <Outlet></Outlet>
         </div>
+        <Toaster></Toaster>
+
         </div>
     );
 };

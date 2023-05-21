@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import MyToyRow from './MyToyRow';
+import { toast } from 'react-hot-toast';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
@@ -19,7 +20,7 @@ const MyToys = () => {
         .then(res => res.json())
         .then(data => {
             if(data.deletedCount>0){
-                alert("deleted successfully")
+                toast.success("The toy is deleted successfully")
                 const remaining = userToys.filter(toy => toy._id !==_id)
                 setUserToys(remaining)
             }
