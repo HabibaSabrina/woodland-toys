@@ -12,7 +12,6 @@ const AllToys = () => {
         const form = event.target;
         const search = form.search.value;
         const searchedToys = allToys.filter(toys => toys.toyName == search)
-        console.log(searchedToys)
         setSearch([...searchedToys])
         
 
