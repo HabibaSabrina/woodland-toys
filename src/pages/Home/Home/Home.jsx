@@ -3,6 +3,7 @@ import ShopByCategory from '../ShopByCategory/ShopByCategory';
 import Gallery from '../Gallery/Gallery';
 import Banner from '../Banner/Banner';
 import ParentsTips from '../ParentsTips/ParentsTips';
+import ProtectAnimal from '../ProtectAnimal/ProtectAnimal';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Gallery></Gallery>
             <ParentsTips></ParentsTips>
             <ShopByCategory></ShopByCategory>
+            <ProtectAnimal></ProtectAnimal>
         </div>
     );
 };

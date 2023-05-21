@@ -2,10 +2,10 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='bg-sky-100 p-10 rounded'>
+        <div className='bg-sky-100 md:p-10 p-5 rounded'>
             <h1 className='text-3xl font-bold text-center mt-10 mb-5 text-green-900'>Gallery</h1>
             <p className='text-center mb-10 text-green-600'>Welcome to our gallery section. Here you can see many momnets of ours.</p>
-            <div className="carousel w-3/6 h-96 mx-auto border-2 border-red-800 rounded-xl">
+            <div className="carousel md:w-3/6 md:h-96 mx-auto border-2 border-red-800 rounded-xl">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="/galleryimg/img1.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

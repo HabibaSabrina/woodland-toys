@@ -13,7 +13,7 @@ const ShopTab = ({subData}) => {
         }
     }
     return (
-        <div className='flex gap-10 p-10 items-center bg-sky-100 my-10 rounded-xl'>
+        <div className='md:flex gap-10 p-10 items-center bg-sky-100 my-10 rounded-xl'>
             <img src={toyPhoto} className='border-2 border-red-800 w-60 rounded-xl m-5' alt="" />
             <div>
             <p className='text-2xl font-bold'>{toyName}</p>

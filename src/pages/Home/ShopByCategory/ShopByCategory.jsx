@@ -13,9 +13,9 @@ const ShopByCategory = () => {
     return (
         <div>
             <Tabs>
-            <TabList className='flex gap-8 justify-center border-b-2 border-green-800 '>
+            <TabList className='md:flex gap-8 justify-center border-b-2 border-green-800 '>
                 {
-                    uniqueSubCategories.map((uniqueSub,i) => <Tab className='border-b-2 p-3 px-5 text-xl font-semibold border-b-green-800 rounded-t-xl bg-green-100 text-green-900 hover:bg-green-400 hover:text-white cursor-pointer border-y' key={i}>{uniqueSub}</Tab>)
+                    uniqueSubCategories.map((uniqueSub,i) => <Tab className='border-b-2 p-3 md:px-5 text-xl font-semibold border-b-green-800 rounded-t-xl bg-green-100 text-green-900 hover:bg-green-400 hover:text-white cursor-pointer border-y' key={i}>{uniqueSub}</Tab>)
                 }
                 
                 </TabList>
