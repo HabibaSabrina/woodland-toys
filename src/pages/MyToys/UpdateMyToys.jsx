@@ -1,10 +1,12 @@
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateMyToys = () => {
     const toyToUpdate = useLoaderData()
     const {_id, toyPhoto, toyName, sellerName, sellerEmail, subCategory, ratings, price, quantity, description } = toyToUpdate
+    useTitle('Toy Update')
     const handleToyUpdate = event =>{
         event.preventDefault()
         const form = event.target;
@@ -49,7 +51,7 @@ const UpdateMyToys = () => {
                 </div>
                 <div className='my-10'>
                     <p className='font-bold text-center text-[#673c0b]'>Detail Description</p>
-                    <textarea name='description' className='focus:outline-0 mt-5 w-full p-5 border-2 border-red-800 rounded-xl'></textarea>
+                    <textarea name='description' className='focus:outline-0 mt-5 w-full p-5 border-2 border-red-800 rounded-xl' required></textarea>
                 </div>
                 <div className='text-center'>
                     <button className='bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg- mt-10'>Update</button>

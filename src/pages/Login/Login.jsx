@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
 import { GoogleAuthProvider } from 'firebase/auth';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const {signIn, googleSignIn} = useContext(AuthContext)
@@ -11,6 +12,7 @@ const Login = () => {
     const provider = new GoogleAuthProvider()
     const navigate = useNavigate()
     const location = useLocation()
+    useTitle('Login')
     const from = location.state?.from?.pathname || '/'
     const handleGoogleSignIn = () => {
         googleSignIn(provider)

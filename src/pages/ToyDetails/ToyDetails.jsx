@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import useTitle from '../../hooks/useTitle';
 const ToyDetails = () => {
     const singleToyData = useLoaderData()
     const {toyPhoto, toyName, sellerName, sellerEmail, ratings, price, quantity, description } = singleToyData
+    useTitle('Toy Details')
     return (
         <div className='bg-green-200 p-20 my-20 rounded-xl'>
             <div className='flex justify-center mx-20 items-center gap-20 bg-white p-20 rounded-xl '>

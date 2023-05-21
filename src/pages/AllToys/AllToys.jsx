@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyRow from './ToyRow';
 import { FaSearch } from 'react-icons/fa';
+import useTitle from '../../hooks/useTitle';
 
 
 const AllToys = () => {
     const allToys = useLoaderData()
     const [search, setSearch] = useState([...allToys])
+    useTitle('All Toys')
     const handleSearch = event => {
         event.preventDefault()
         const form = event.target;

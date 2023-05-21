@@ -2,11 +2,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import MyToyRow from './MyToyRow';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [userToys, setUserToys] = useState([])
-    console.log(user)
+    useTitle('My Toys')
     const url = `https://woodland-toys-server-habibasabrina.vercel.app/toys?sellerEmail=${user.email}`
     useEffect(() => {
         fetch(url)

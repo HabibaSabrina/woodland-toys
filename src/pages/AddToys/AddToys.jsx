@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../hooks/useTitle';
 
 const AddToys = () => {
     const {user} = useContext(AuthContext)
+    useTitle('Add Toy')
     const handleAddToys = event => {
         event.preventDefault()
         const form = event.target;
