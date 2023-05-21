@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ToyRow from './ToyRow';
+import { FaSearch } from 'react-icons/fa';
+
 
 const AllToys = () => {
     const allToys = useLoaderData()
-    console.log(allToys)
+    const [search, setSearch] = useState([...allToys])
+    const handleSearch = event => {
+        event.preventDefault()
+        const form = event.target;
+        const search = form.search.value;
+        const searchedToys = allToys.filter(toys => toys.toyName == search)
+        console.log(searchedToys)
+        setSearch([...searchedToys])
+        
+
+    }
     return (
-        <div>
+        <div >
+            <div className=''>
+            <form onSubmit={handleSearch} className='text-center mt-20'  action="">
+                <input className='border-2 border-green-300 w-96 p-3 rounded-xl mx-5' name='search' placeholder='Search Text' type="text" />
+                <button className='bg-green-600 p-3 rounded-full text-white'><FaSearch className='text-xl'></FaSearch></button>
+            </form>
+            </div>
             <div className="overflow-x-auto w-full mt-20">
                 <table className=" my-5 w-full">
                     <thead className='bg-green-300 text-red-800'>
@@ -22,7 +40,7 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            allToys.map(toy => <ToyRow key={toy._id} toy={toy}></ToyRow>)
+                            search.map(toy => <ToyRow key={toy._id} toy={toy}></ToyRow>)
                         }
                     </tbody>
 

@@ -9,7 +9,7 @@ const ShopTab = ({subData}) => {
     const {user} = useContext(AuthContext)
     const handle = () =>{
         if(!user){
-            toast.error("You have to login first to see details")
+            toast.error("You have to log in first to view details")
         }
     }
     return (
