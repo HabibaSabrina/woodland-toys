@@ -6,7 +6,7 @@ const ToyDetails = () => {
     const singleToyData = useLoaderData()
     const {toyPhoto, toyName, sellerName, sellerEmail, ratings, price, quantity, description } = singleToyData
     return (
-        <div className='bg-green-200 p-20'>
+        <div className='bg-green-200 p-20 my-20 rounded-xl'>
             <div className='flex justify-center mx-20 items-center gap-20 bg-white p-20 rounded-xl '>
             <img className='w-64' src={toyPhoto} alt="" />
             <div className='border-l-2 border-green-300'>

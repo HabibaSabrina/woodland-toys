@@ -21,7 +21,7 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
         {
           path:'/',
           element:<Home></Home>,
-          loader: () => fetch('http://localhost:5000/toys')
+          loader: () => fetch('https://woodland-toys-server-habibasabrina.vercel.app/toys')
 
         },
         {
@@ -39,7 +39,7 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
         {
           path:'/alltoys',
           element:<AllToys></AllToys>,
-          loader: () => fetch('http://localhost:5000/toys')
+          loader: () => fetch('https://woodland-toys-server-habibasabrina.vercel.app/toys')
         },
         {
           path:'/mytoys',
@@ -48,12 +48,12 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
         {
           path:'/updatetoy/:id',
           element:<UpdateMyToys></UpdateMyToys>,
-          loader:({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params}) => fetch(`https://woodland-toys-server-habibasabrina.vercel.app/toys/${params.id}`)
         },
         {
           path:'/toy/:id',
           element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-          loader:({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+          loader:({params}) => fetch(`https://woodland-toys-server-habibasabrina.vercel.app/toys/${params.id}`)
         }
       ]
     },

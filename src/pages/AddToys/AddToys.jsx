@@ -17,7 +17,7 @@ const AddToys = () => {
         const toyPhoto = form.toyPhoto.value;
         const toy = {toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, ratings, quantity, description}
         console.log(toy)
-        fetch('http://localhost:5000/toys',{
+        fetch('https://woodland-toys-server-habibasabrina.vercel.app/toys',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -76,7 +76,7 @@ const AddToys = () => {
                             <option value='Dinosaur'>Dinosaur</option>
                             <option value='Dogs'>Dog</option>
                             <option value='Cat'>Cat</option>
-                            <option value='Cows'>Cow</option>
+                            <option value='Cow'>Cow</option>
                         </select>
                     </div>
                 </div>

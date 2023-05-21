@@ -8,7 +8,7 @@ const ToyRow = ({toy}) => {
         <td>
             <div className="avatar">
                 <div className="rounded w-24 h-24">
-                    {toyPhoto && <img src={toyPhoto} className='p-2 rounded-xl' alt="Avatar Tailwind CSS Component" />}
+                    {toyPhoto && <img src={toyPhoto} className='p-2 rounded-xl' alt={toyName} />}
                 </div>
             </div>
         </td>

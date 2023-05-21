@@ -12,7 +12,7 @@ const UpdateMyToys = () => {
         const description = form.description.value;
         const updatedToy = {toyName, toyPhoto, sellerName, sellerEmail, subCategory, price, ratings, quantity, description}
         // const updatedToy = { price, quantity, description}
-        fetch(`http://localhost:5000/toys/${_id}`,{
+        fetch(`https://woodland-toys-server-habibasabrina.vercel.app/toys/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const UpdateMyToys = () => {
                     <textarea name='description' className='focus:outline-0 mt-5 w-full p-5 border-2 border-red-800 rounded-xl'></textarea>
                 </div>
                 <div className='text-center'>
-                    <Link><button className='bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg- mt-10'>Update</button></Link>
+                    <button className='bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg- mt-10'>Update</button>
 
                 </div>
             </form>
