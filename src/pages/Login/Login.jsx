@@ -1,12 +1,29 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../providers/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext)
+    const {signIn, googleSignIn} = useContext(AuthContext)
     const [error, setError] = useState('')
     const [success, setSuccess] = useState('')
+    const provider = new GoogleAuthProvider()
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const handleGoogleSignIn = () => {
+        googleSignIn(provider)
+            .then(result => {
+                const loggedInUser = result.user;
+                navigate(from, { replace: true })
+
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
     const handleUserLogin = event => {
         event.preventDefault()
         const form = event.target;
@@ -24,7 +41,7 @@ const Login = () => {
                 setSuccess('Login is successful')
                 setError('')
                 form.reset();
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError('Email or Password is incorrect')
@@ -44,7 +61,7 @@ const Login = () => {
                         <input className='text-center  focus:outline-0 focus:text-center mt-5 w-64 md:w-80 p-2 border-2 border-red-800 rounded-full' type="password" name="password" required />
                         <br />
                         <button className='bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-green-900 mt-10'>Login</button>
-                        <button className='mx-auto bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-green-900 mt-10 flex items-center gap-3 justify-center'><FaGoogle></FaGoogle><span>Google Sign in</span></button>
+                        <button onClick={handleGoogleSignIn} className='mx-auto bg-[#673c0b] w-64 rounded-full p-3 text-xl text-white font-semibold hover:bg-green-900 mt-10 flex items-center gap-3 justify-center'><FaGoogle></FaGoogle><span>Google Sign in</span></button>
                         <p className='my-5 text-green-950 font-semibold'>Don't Have an Account? Please <Link to="/register"><span className='text-red-800 font-semibold'>Register</span></Link></p>
                     </div>
                 </form>

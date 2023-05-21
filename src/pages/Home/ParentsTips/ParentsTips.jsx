@@ -5,7 +5,7 @@ const ParentsTips = () => {
     return (
         <div className='my-20 p-20 bg-green-200 rounded-xl'>
             <h1 className='text-center text-3xl mb-10 font-bold'>Pro Tips for Parents</h1>
-            <div className='flex gap-10 items-center justify-center'>
+            <div className='flex gap-20 items-center justify-center'>
             <img className='w-96 rounded-full' src="/parent.jpg" alt="" />
             <div>
                 <p className='mb-4 flex items-center gap-3 text-xl'><FaRegGrinWink className='text-blue-900'></FaRegGrinWink>Set Limits and Be Consistent With Your Discipline</p>
