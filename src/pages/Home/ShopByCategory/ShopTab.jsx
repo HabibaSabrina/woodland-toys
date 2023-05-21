@@ -1,8 +1,9 @@
 import React from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import { Link } from 'react-router-dom';
 const ShopTab = ({subData}) => {
-    const {toyPhoto, toyName, price, ratings} = subData
+    const {_id, toyPhoto, toyName, price, ratings} = subData
     return (
         <div className='flex gap-10 p-10 items-center bg-sky-100 my-10 rounded-xl'>
             <img src={toyPhoto} className='border-2 border-red-800 w-60 rounded-xl m-5' alt="" />
@@ -16,7 +17,7 @@ const ShopTab = ({subData}) => {
                     <span className='ml-2'> {ratings}</span>
                 </div>
                 <div className='my-5 text-center'>
-                    <button className='p-3 px-12 bg-green-500 border-2 border-green-800 hover:bg-green-800 text-xl font-semibold text-white rounded-full'>View Details</button>
+                    <Link to={`/toy/${_id}`}><button className='p-3 px-12 bg-green-500 border-2 border-green-800 hover:bg-green-800 text-xl font-semibold text-white rounded-full'>View Details</button></Link>
                     </div>
             </div>
 
