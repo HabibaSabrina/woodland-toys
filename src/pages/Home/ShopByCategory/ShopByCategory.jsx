@@ -7,7 +7,6 @@ const ShopByCategory = () => {
     const toydata = useLoaderData()
     const [categoryData, setCategoryData] = useState([])
     const uniqueSubCategories = [...new Set(toydata.map((toy) => toy.subCategory))];
-    console.log(uniqueSubCategories);
     
    
 
