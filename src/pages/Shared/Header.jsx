@@ -35,7 +35,7 @@ const Header = () => {
 
             <div className='md:flex items-center justify-between'>
                 <div className='flex gap-2 items-center justify-center'>
-                    <img src="logo.png" className='w-16' alt="" />
+                    <img src="/logo.png" className='w-16' alt="" />
                     <h1 className='h-12 text-4xl font-bold animate-text bg-gradient-to-r from-[#00d026] via-[#FFEC01] to-[#78460D] bg-clip-text text-transparent'>Woodland Toys</h1>
                 </div>
                 <div className='md:flex items-center gap-8'>
