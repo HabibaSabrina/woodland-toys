@@ -12,6 +12,7 @@ import MyToys from "../pages/MyToys/MyToys";
 import PrivateRoute from "./PrivateRoute";
 import UpdateMyToys from "../pages/MyToys/UpdateMyToys";
 import ToyDetails from "../pages/ToyDetails/ToyDetails";
+import Blogs from "../pages/Blogs/Blogs";
 
   const router = createBrowserRouter([
     {
@@ -54,6 +55,10 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
           path:'/toy/:id',
           element:<PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
           loader:({params}) => fetch(`https://woodland-toys-server-habibasabrina.vercel.app/toys/${params.id}`)
+        },
+        {
+          path:'/blog',
+          element:<Blogs></Blogs>
         }
       ]
     },

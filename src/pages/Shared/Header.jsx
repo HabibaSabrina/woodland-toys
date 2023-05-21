@@ -59,7 +59,7 @@ const Header = () => {
                                 <Link to='/addtoys'><li className='max-sm:p-3'>Add a Toy</li></Link>
                             </>
                         }
-                        <Link><li className='max-sm:p-3'>Blog</li></Link>
+                        <Link to='/blog'><li className='max-sm:p-3'>Blog</li></Link>
                     </ul>
 
                 </div>
