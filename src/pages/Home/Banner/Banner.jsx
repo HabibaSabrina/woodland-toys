@@ -21,7 +21,7 @@ const Banner = () => {
                 <div className=' my-8'>
                 <Link to='/alltoys'><button className='bg-green-700 hover:bg-green-900 p-3 px-10 rounded-xl text-white font-semibold'>Show All Toys</button></Link>
                 {
-                    !user && <Link to='/register'><button className='bg-green-700 hover:bg-green-900 p-3 px-10 rounded-xl ml-5 text-white font-semibold'>Register</button></Link>
+                    !user && <Link to='/register'><button className='bg-green-700 max-sm:mt-4 hover:bg-green-900 p-3 px-10 rounded-xl md:ml-5 text-white font-semibold'>Register</button></Link>
                 }
                 </div>
             </div>

@@ -25,11 +25,11 @@ const ProtectAnimal = () => {
                     <img src="/giraf.png" alt="" />
                 </div>
                 <div>
-                    <div data-aos='fade-left'>
+                    <div data-aos='fade-right'>
                         <p className='text-2xl font-semibold my-3 text-green-800'>Avoid harmful chemicals</p>
                         <p>In our efforts to spur lawn growth and control pests, we may turn to chemical solutions, which can be very harmful to wildlife like bees and butterflies that are helpful to the environment.</p>
                     </div>
-                    <div data-aos='fade-left'>
+                    <div data-aos='fade-right'>
                         <p className='text-2xl font-semibold my-3 text-green-800'>Pick up trash </p>
                         <p >Picking up trash not only protects the environment and keeps our surroundings beautiful, but it can also save wildlife. Plastic bags and twine can easily trap birds and other smaller animals, hurting or killing them or making them easy prey.</p>
                     </div>

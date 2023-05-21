@@ -47,7 +47,7 @@ const Header = () => {
                         </div>
                         }
                         {
-                            user ? <button onClick={handleLogOut} className='flex gap-2 mr-5 text-[#108826] font-semibold'><ArrowLeftOnRectangleIcon className="h-6 w-6 " />Log Out</button> : <Link to='/login'><button className='flex gap-2 text-[#108826] font-semibold'><ArrowRightOnRectangleIcon className="h-6 w-6" />Login</button></Link>
+                            user ? <button onClick={handleLogOut} className='flex gap-2 max-sm:mr-5 text-[#108826] font-semibold'><ArrowLeftOnRectangleIcon className="h-6 w-6 " />Log Out</button> : <Link to='/login'><button className='flex gap-2 text-[#108826] max-sm:mr-5 max-sm:mt-5 font-semibold'><ArrowRightOnRectangleIcon className="h-6 w-6" />Login</button></Link>
                         }
                     </div>
                     <ul className={`md:flex max-sm:bg-[#108826] max-sm:text-white gap-8 text-[#108826] font-semibold absolute md:static 0 max-sm:pl-8 py-2 duration-500 ${open ? 'top-6' : '-top-80'}`}>
